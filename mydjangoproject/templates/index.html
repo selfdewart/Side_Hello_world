@@ -6,6 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello world</h1>
+    <h1>список сотрудников ООО</h1>
+
+    
+    {% for i in data %}
+    <h2>Сотрудник {{forloop.counter}}</h2>
+        Фамилия: {{i.second_name}} 
+        Имя: {{i.name}} 
+        Зарплата: 
+        
+        
+        {% if i.salary > 60000 %}
+        <b style="color: green;">{{i.salary}}</b>
+
+        {% else %}
+        <b style="color: red;">{{i.salary}}</b>
+        {% endif %}
+        <br>
+    {% endfor %}
+        
+
 </body>
 </html>
